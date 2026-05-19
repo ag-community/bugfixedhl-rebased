@@ -19,6 +19,7 @@
 #include "weapons.h"
 #include "nodes.h"
 #include "player.h"
+#include "game.h"
 
 #define HANDGRENADE_PRIMARY_VOLUME 450
 
@@ -132,10 +133,21 @@ void CHandGrenade::WeaponIdle(void)
 		else
 			angThrow.x = -10 + angThrow.x * ((90 + 10) / 90.0);
 
-		static float flMultiplier = 6.5f;
-		float flVel = (90 - angThrow.x) * flMultiplier;
-		if (flVel > 1000)
-			flVel = 1000;
+		
+		float flVel;
+		if (mp_hgrenade_legacy_throw.GetBool())
+		{
+			flVel = (90 - angThrow.x) * 4;
+			if (flVel > 500)
+				flVel = 500;
+		}
+		else
+		{
+			static float flMultiplier = 6.5f;
+			flVel = (90 - angThrow.x) * flMultiplier;
+			if (flVel > 1000)
+				flVel = 1000;
+		}
 
 		UTIL_MakeVectors(angThrow);
 

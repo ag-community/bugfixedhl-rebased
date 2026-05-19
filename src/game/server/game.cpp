@@ -89,6 +89,7 @@ cvar_t mp_dmg_tripmine = { "mp_dmg_tripmine", "150", FCVAR_SERVER };
 cvar_t mp_dmg_m203 = { "mp_dmg_m203", "100", FCVAR_SERVER };
 
 ConVar mp_mp5_legacy_max_ammo("mp_mp5_legacy_max_ammo", "0", 0, "Use legacy max ammo for MP5.");
+ConVar mp_hgrenade_legacy_throw("mp_hgrenade_legacy_throw", "0", 0, "Use legacy grenade throwing mechanics.");
 
 // Engine Cvars
 cvar_t *g_psv_gravity = NULL;
