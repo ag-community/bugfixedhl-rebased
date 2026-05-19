@@ -24,6 +24,9 @@
 #include "gamerules.h"
 #include "game.h"
 
+ConVar mp_mp5_legacy_max_ammo("mp_mp5_legacy_max_ammo", "0", 0, "Use legacy max ammo for MP5.");
+ConVar mp_mp5_legacy_spread("mp_mp5_legacy_spread", "0", 0, "Use legacy MP5 spread pattern.");
+
 enum mp5_e
 {
 	MP5_LONGIDLE = 0,

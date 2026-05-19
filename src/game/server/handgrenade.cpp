@@ -21,6 +21,8 @@
 #include "player.h"
 #include "game.h"
 
+ConVar mp_hgrenade_legacy_throw("mp_hgrenade_legacy_throw", "0", 0, "Use legacy grenade throwing mechanics.");
+
 #define HANDGRENADE_PRIMARY_VOLUME 450
 
 enum handgrenade_e
