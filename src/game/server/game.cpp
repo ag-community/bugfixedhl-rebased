@@ -88,6 +88,8 @@ cvar_t mp_dmg_satchel = { "mp_dmg_satchel", "120", FCVAR_SERVER };
 cvar_t mp_dmg_tripmine = { "mp_dmg_tripmine", "150", FCVAR_SERVER };
 cvar_t mp_dmg_m203 = { "mp_dmg_m203", "100", FCVAR_SERVER };
 
+ConVar mp_mp5_legacy_max_ammo("mp_mp5_legacy_max_ammo", "0", 0, "Use legacy max ammo for MP5.");
+
 // Engine Cvars
 cvar_t *g_psv_gravity = NULL;
 cvar_t *g_psv_aim = NULL;

@@ -69,6 +69,8 @@ extern cvar_t mp_dmg_satchel;
 extern cvar_t mp_dmg_tripmine;
 extern cvar_t mp_dmg_m203;
 
+extern ConVar mp_mp5_legacy_max_ammo;
+
 // Engine Cvars
 extern cvar_t *g_psv_gravity;
 extern cvar_t *g_psv_aim;

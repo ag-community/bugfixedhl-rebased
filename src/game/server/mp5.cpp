@@ -22,6 +22,7 @@
 #include "player.h"
 #include "soundent.h"
 #include "gamerules.h"
+#include "game.h"
 
 enum mp5_e
 {
@@ -52,8 +53,7 @@ void CMP5::Spawn()
 	SET_MODEL(ENT(pev), "models/w_9mmAR.mdl");
 	m_iId = WEAPON_MP5;
 
-	m_iDefaultAmmo = gpGlobals->maxClients > 1 ? MP5_MAX_CLIP : MP5_DEFAULT_GIVE;
-
+	m_iDefaultAmmo = (gpGlobals->maxClients > 1 && !mp_mp5_legacy_max_ammo.GetBool()) ? MP5_MAX_CLIP : MP5_DEFAULT_GIVE;
 	FallInit(); // get ready to fall down.
 }
 
