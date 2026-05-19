@@ -150,9 +150,9 @@ void CMP5::PrimaryAttack()
 	Vector vecDir;
 
 #ifdef CLIENT_DLL
-	if (bIsMultiplayer())
+	if (bIsMultiplayer() && !mp_mp5_legacy_spread.GetBool())
 #else
-	if (g_pGameRules->IsMultiplayer())
+	if (g_pGameRules->IsMultiplayer() && !mp_mp5_legacy_spread.GetBool())
 #endif
 	{
 		// optimized multiplayer. Widened to make it easier to hit a moving player

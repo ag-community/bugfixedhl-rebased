@@ -70,6 +70,7 @@ extern cvar_t mp_dmg_tripmine;
 extern cvar_t mp_dmg_m203;
 
 extern ConVar mp_mp5_legacy_max_ammo;
+extern ConVar mp_mp5_legacy_spread;
 extern ConVar mp_hgrenade_legacy_throw;
 
 // Engine Cvars
