@@ -1421,9 +1421,12 @@ void CBasePlayer::PlayerDeathThink(void)
 
 	if (mp_respawn_fix.GetBool())
 	{
+		float minRespawnTime = min(mp_respawn_delay.GetFloat(), 120.0f);
+		if (forcerespawn.value > 0)
+			minRespawnTime = min(minRespawnTime, mp_forcerespawn_time.GetFloat());
 		// BHL behavior: wait for fixed time
 		// time given to animate corpse and don't allow to respawn till this time ends
-		if (gpGlobals->time < m_flDeathAnimationStartTime + mp_respawn_delay.GetFloat())
+		if (gpGlobals->time < m_flDeathAnimationStartTime + minRespawnTime)
 			return;
 	}
 
@@ -1486,7 +1489,7 @@ void CBasePlayer::PlayerDeathThink(void)
 
 	// wait for any button down,  or mp_forcerespawn is set and the respawn time is up
 	if (!fAnyButtonDown
-	    && !(g_pGameRules->IsMultiplayer() && forcerespawn.value > 0 && (gpGlobals->time > (m_fDeadTime + 5))))
+	    && !(g_pGameRules->IsMultiplayer() && forcerespawn.value > 0 && (gpGlobals->time > (m_fDeadTime + mp_forcerespawn_time.GetFloat()))))
 		return;
 
 	pev->button = 0;

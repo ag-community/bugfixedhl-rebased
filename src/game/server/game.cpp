@@ -63,6 +63,7 @@ ConVar mp_welcomecam("mp_welcomecam", "1", 0, "Don't spawn players immediately o
 ConVar mp_welcomecam_delay("mp_welcomecam_delay", "0.2", 0, "Delay before the player can leave welcome cam");
 ConVar mp_respawn_fix("mp_respawn_fix", "1", 0, "Fix inconsistent respawn times and standing corpses");
 ConVar mp_respawn_delay("mp_respawn_delay", "1.5", 0, "Time until palyers can respawn after death. Requires mp_respawn_fix 1.");
+ConVar mp_forcerespawn_time("mp_forcerespawn_time", "5", 0, "Time after death before forcerespawn forces respawn. Requires mp_forcerespawn 1.");
 
 cvar_t motdfile_unicode = { "motdfile_unicode", "motd_unicode.txt", FCVAR_SERVER };
 cvar_t motdfile_html = { "motdfile_html", "motd.html", FCVAR_SERVER };
