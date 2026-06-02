@@ -1487,9 +1487,9 @@ void CBasePlayer::PlayerDeathThink(void)
 	if (pev->iuser1)
 		return;
 
-	// wait for any button down,  or mp_forcerespawn is set and the respawn time is up
+	// wait for any button down, or mp_forcerespawn is set and the respawn time is up
 	if (!fAnyButtonDown
-	    && !(g_pGameRules->IsMultiplayer() && forcerespawn.value > 0 && (gpGlobals->time > (m_fDeadTime + mp_forcerespawn_time.GetFloat()))))
+	    && !(g_pGameRules->IsMultiplayer() && forcerespawn.value > 0 && (gpGlobals->time > (m_flDeathAnimationStartTime + mp_forcerespawn_time.GetFloat()))))
 		return;
 
 	pev->button = 0;
